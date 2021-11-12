@@ -68,7 +68,42 @@ US_Giveaways.forEach(giveaway => {
         const title = chtml(this).find('a').first().text()
         const link = chtml(this).find('a').attr('href')
         const disc = chtml(this).find('div[style="margin-top:6px;margin-bottom:4px;font-size:15px;"]').text()
-        const enddate = chtml(this).find('table[width="100%"]').find('td:eq(1)').text()
+        const enddate = chtml(this).find('table[width="100%"]').find('td:eq(0)').text().replace('Featured Sweepstakes', '')
+        const feature = chtml(this).find('tbody').find('center').text()
+        const restrictions = chtml(this).find('div').find('td[align="left"]').first().text()
+        // const $ = chtml(this).find('div.style').text()
+        // console.log(articles.length)
+        articles.push({
+            feature,
+            title,
+            disc,
+            restrictions,
+            enddate,
+            link: giveaway.base + link,
+            source: giveaway.name
+            
+
+        })
+    })
+    })
+
+    app.get('/', (req,res) => {
+        res.json(articles)
+    })
+})
+
+US_Giveaways.forEach(giveaway => {
+    // axios.get(giveaway.link)
+    axios.get(giveaway.link2)
+    .then(response =>{
+        const html = response.data
+        const chtml = cheerio.load(html)
+
+        chtml('.padded', html).each(function() {
+        const title = chtml(this).find('a').first().text()
+        const link = chtml(this).find('a').attr('href')
+        const disc = chtml(this).find('div[style="margin-top:6px;margin-bottom:4px;font-size:15px;"]').text()
+        const enddate = chtml(this).find('table[width="100%"]').find('td:eq(0)').text()
         const feature = chtml(this).find('tbody').find('center').text()
         const restrictions = chtml(this).find('div').find('td[align="left"]').first().text()
         // const $ = chtml(this).find('div.style').text()
@@ -130,4 +165,4 @@ US_Giveaways.forEach(giveaway => {
 // })
 
 
-app.listen(PORT, () => console.log('fff'))
+app.listen(PORT)
