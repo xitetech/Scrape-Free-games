@@ -9,60 +9,61 @@ const express = require('express')
 
 const app = express()
 
-const US_Giveaways = [
-    {
-        name: 'Single-Entry-Sweeps',
-        link: 'https://www.contestgirl.com/contests/contests.pl?f=s&c=us&b=nb&sort=p&ar=na&s=_',
-        link2: 'https://www.contestgirl.com/contests/contests.pl?f=s&c=us&i=10&b=nb&sort=p&ar=na&s=_',
-        base: 'https://www.contestgirl.com',
-    },
-    {
-        name: 'Daily-Sweepstakes',
-        link: 'https://www.contestgirl.com/contests/contests.pl?f=d&c=us&b=nb&sort=p&ar=na&s=_',
-        link2: 'https://www.contestgirl.com/contests/contests.pl?f=d&c=us&i=10&b=nb&sort=p&ar=na&s=_',
-        base: 'https://www.contestgirl.com',
-    },
-    {
-        name: 'Weekly-Sweepstakes',
-        link: 'https://www.contestgirl.com/contests/contests.pl?f=w&c=us&b=nb&sort=p&ar=na&s=_',
-        link2: 'https://www.contestgirl.com/contests/contests.pl?f=w&c=us&i=10&b=nb&sort=p&ar=na&s=_',
-        base: 'https://www.contestgirl.com',
-    },
-    {
-        name: 'Monthly-Sweepstakes',
-        link: 'https://www.contestgirl.com/contests/contests.pl?f=m&c=us&b=nb&sort=p&ar=na&s=_',
-        link2: 'https://www.contestgirl.com/contests/contests.pl?f=m&c=us&i=10&b=nb&sort=p&ar=na&s=_',
-        base: 'https://www.contestgirl.com',
-    },
-    {
-        name: 'Odd-Entry-Sweeps',
-        link: 'https://www.contestgirl.com/contests/contests.pl?f=o&c=us&b=nb&sort=p&ar=na&s=_',
-        link2: 'https://www.contestgirl.com/contests/contests.pl?f=o&c=us&i=10&b=nb&sort=p&ar=na&s=_',
-        base: 'https://www.contestgirl.com',
-    },
-    {
-        name: 'Blog-Giveaways',
-        link: 'https://www.contestgirl.com/contests/contests.pl?f=sdwmo&c=us&b=b&sort=p&ar=na&s=_',
-        link2: 'https://www.contestgirl.com/contests/contests.pl?f=sdwmo&c=us&i=10&b=b&sort=p&ar=na&s=_',
-        base: 'https://www.contestgirl.com',
-    },
-    {
-        name: 'Free-Samples',
-        link: 'https://www.contestgirl.com/contests/contests.pl?f=s&c=us&b=nb&sort=p&ar=na&s=_',
-        link2: 'https://www.contestgirl.com/contests/contests.pl?f=f&c=us&i=12&ar=na&s=_',
-        base: 'https://www.contestgirl.com',
-    }
-]
+// const US_Giveaways = [
+//     {
+//         name: 'Single-Entry-Sweeps',
+//         link: 'https://www.contestgirl.com/contests/contests.pl?f=s&c=us&b=nb&sort=p&ar=na&s=_',
+//         link2: 'https://www.contestgirl.com/contests/contests.pl?f=s&c=us&i=10&b=nb&sort=p&ar=na&s=_',
+//         base: 'https://www.contestgirl.com',
+//     },
+//     {
+//         name: 'Daily-Sweepstakes',
+//         link: 'https://www.contestgirl.com/contests/contests.pl?f=d&c=us&b=nb&sort=p&ar=na&s=_',
+//         link2: 'https://www.contestgirl.com/contests/contests.pl?f=d&c=us&i=10&b=nb&sort=p&ar=na&s=_',
+//         base: 'https://www.contestgirl.com',
+//     },
+//     {
+//         name: 'Weekly-Sweepstakes',
+//         link: 'https://www.contestgirl.com/contests/contests.pl?f=w&c=us&b=nb&sort=p&ar=na&s=_',
+//         link2: 'https://www.contestgirl.com/contests/contests.pl?f=w&c=us&i=10&b=nb&sort=p&ar=na&s=_',
+//         base: 'https://www.contestgirl.com',
+//     },
+//     {
+//         name: 'Monthly-Sweepstakes',
+//         link: 'https://www.contestgirl.com/contests/contests.pl?f=m&c=us&b=nb&sort=p&ar=na&s=_',
+//         link2: 'https://www.contestgirl.com/contests/contests.pl?f=m&c=us&i=10&b=nb&sort=p&ar=na&s=_',
+//         base: 'https://www.contestgirl.com',
+//     },
+//     {
+//         name: 'Odd-Entry-Sweeps',
+//         link: 'https://www.contestgirl.com/contests/contests.pl?f=o&c=us&b=nb&sort=p&ar=na&s=_',
+//         link2: 'https://www.contestgirl.com/contests/contests.pl?f=o&c=us&i=10&b=nb&sort=p&ar=na&s=_',
+//         base: 'https://www.contestgirl.com',
+//     },
+//     {
+//         name: 'Blog-Giveaways',
+//         link: 'https://www.contestgirl.com/contests/contests.pl?f=sdwmo&c=us&b=b&sort=p&ar=na&s=_',
+//         link2: 'https://www.contestgirl.com/contests/contests.pl?f=sdwmo&c=us&i=10&b=b&sort=p&ar=na&s=_',
+//         base: 'https://www.contestgirl.com',
+//     },
+//     {
+//         name: 'Free-Samples',
+//         link: 'https://www.contestgirl.com/contests/contests.pl?f=s&c=us&b=nb&sort=p&ar=na&s=_',
+//         link2: 'https://www.contestgirl.com/contests/contests.pl?f=f&c=us&i=12&ar=na&s=_',
+//         base: 'https://www.contestgirl.com',
+//     }
+// ]
 
 const articles = []
 
 
-US_Giveaways.forEach(giveaway => {
-    axios.get(giveaway.link)
+
+    axios.get('https://www.gog.com/partner/free_games')
     // axios.get(giveaway.link2)
     .then(response =>{
         const html = response.data
         const chtml = cheerio.load(html)
+        console.log(chtml)
 
         chtml('.padded', html).each(function() {
         const title = chtml(this).find('a').first().text()
@@ -72,7 +73,7 @@ US_Giveaways.forEach(giveaway => {
         const feature = chtml(this).find('tbody').find('center').text()
         const restrictions = chtml(this).find('div').find('td[align="left"]').first().text()
         // const $ = chtml(this).find('div.style').text()
-        // console.log(articles.length)
+        console.log(chtml)
         articles.push({
             feature,
             title,
@@ -90,79 +91,8 @@ US_Giveaways.forEach(giveaway => {
     app.get('/', (req,res) => {
         res.json(articles)
     })
-})
-
-US_Giveaways.forEach(giveaway => {
-    // axios.get(giveaway.link)
-    axios.get(giveaway.link2)
-    .then(response =>{
-        const html = response.data
-        const chtml = cheerio.load(html)
-
-        chtml('.padded', html).each(function() {
-        const title = chtml(this).find('a').first().text()
-        const link = chtml(this).find('a').attr('href')
-        const disc = chtml(this).find('div[style="margin-top:6px;margin-bottom:4px;font-size:15px;"]').text()
-        const enddate = chtml(this).find('table[width="100%"]').find('td:eq(0)').text()
-        const feature = chtml(this).find('tbody').find('center').text()
-        const restrictions = chtml(this).find('div').find('td[align="left"]').first().text()
-        // const $ = chtml(this).find('div.style').text()
-        // console.log(articles.length)
-        articles.push({
-            feature,
-            title,
-            disc,
-            restrictions,
-            enddate,
-            link: giveaway.base + link,
-            source: giveaway.name
-            
-
-        })
-    })
-    })
-
-    app.get('/', (req,res) => {
-        res.json(articles)
-    })
-})
 
 
-
-// app.get('/:id', async (req,res) => {
-
-//     const id = req.params.id
-
-    
-//     const  newlink = US_Giveaways.filter(away => away.name == id)[0].link
-//     const newbase = US_Giveaways.filter(away => away.name == id)[0].base
-//     console.log(newlink)
-
-
-//     axios.get(newlink)
-//         .then(response => {
-//             const html = response.data
-//             const $ = cheerio.load(html)
-//             const newarticles = []
-
-//             $('.padded', html).each(function() {
-//                 const title = $(this).find('a').first().text()
-//                 const url = $(this).find('a').attr('href')   
-//                 newarticles.push({
-//                     title,
-//                     url: newbase + url,
-//                     source: id
-                
-        
-//                 })
-//             }) 
-
-
-//         }).catch(err => console.log(err))
-
-//         res.json(newarticles)
-
-// })
 
 
 app.listen(PORT)
